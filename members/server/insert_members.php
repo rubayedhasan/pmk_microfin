@@ -21,76 +21,79 @@ $trackTransaction = false;
 // define input  and db columns relation for step 1,2,4 (plain input)
 $fieldMap = [
     1 => [
-        'member_samity_name' => 'samity_code',
-        'member_primary_product' => 'primary_product_code',
-        'member_name' => 'member_name',
-        'member_surname' => 'member_surname',
-        'member_code' => 'member_code',
-        'member_father' => 'father_name',
-        'member_mother' => 'mother_name',
-        'member_nationality' => 'nationality',
-        'member_gender' => 'gender',
-        'member_dob' => 'member_dob',
-        'member_age' => 'age',
-        'member_marital_status' => 'marital_status',
-        'member_spouse_name' => 'spouse_name',
-        'member_education' => 'education',
-        'member_mobile' => 'member_mobile',
-        'member_admission_fee' => 'admission_fee',
-        'member_smart_id' => 'smart_id',
-        'member_nid' => 'nid',
-        'member_birth_reg' => 'birth_reg',
-        'member_tin_no' => 'tin_no',
-        'member_passport' => 'passport_no',
-        'member_pass_expiry' => 'passport_expiry',
-        'member_driving_lic' => 'driving_license',
-        'member_drive_expiry' => 'driving_expiry',
-        'member_admission_no' => 'admission_no',
-        'member_application_no' => 'application_no',
+        'member_samity_name' => 'SamityId',
+        'member_primary_product' => 'PrimaryProductId',
+        'member_name' => 'Name',
+        'member_surname' => 'MemberSurname',
+        'member_code' => 'MemberCode',
+        'member_father' => 'FathersName',
+        'member_mother' => 'MothersName',
+        'member_nationality' => 'Nationality',
+        'member_gender' => 'Gender',
+        'member_dob' => 'DateOfBirth',
+        'member_age' => 'Age',
+        'member_marital_status' => 'MaritalStatus',
+        'member_spouse_name' => 'SpouseName',
+        'member_education' => 'LastAchievedDegree',
+        'member_mobile' => 'MobileNo',
+        'member_admission_fee' => 'AdmissionFee',
+        'member_smart_id' => 'SmartId',
+        'member_nid' => 'NationalId',
+        'member_birth_reg' => 'BirthRegistrationNo',
+        'member_tin_no' => 'TinNo',
+        'member_passport' => 'PassportNo',
+        'member_pass_expiry' => 'PassportExpiryDate',
+        'member_driving_lic' => 'DrivingLicense',
+        'member_drive_expiry' => 'DrivingLinceseExpiryDate',
+        'member_admission_no' => 'FormApplicationNo',
+        'member_application_no' => 'RegistrationNo',
     ],
 
     2 => [
 
         // nid 
-        'member_NID_division' => 'nid_division',
-        'member_NID_district' => 'nid_district',
-        'member_NID_Upazila' => 'nid_upazila',
-        'member_NID_union' => 'nid_union',
-        'member_NID_village' => 'nid_village',
-        'member_NID_house' => 'nid_house',
+        'member_NID_division' => 'NidDivision',
+        'member_NID_district' => 'NidDstrict',
+        'member_NID_Upazila' => 'NidUpazila',
+        'member_NID_post_office' => 'NidPostOfficeArea',
+        'member_NID_union' => 'NidUnion',
+        'member_NID_village' => 'NidVillageWard',
+        'member_NID_house' => 'NidHouseStreet',
 
         // present  
-        'member_present_division' => 'present_division',
-        'member_present_district' => 'present_district',
-        'member_present_Upazila' => 'present_upazila',
-        'member_present_union' => 'present_union',
-        'member_present_village' => 'present_village',
-        'member_present_house' => 'present_house',
+        'member_present_division' => 'PresentDivision',
+        'member_present_district' => 'PresentDistrict',
+        'member_present_Upazila' => 'PresentUpazila',
+        'member_present_post_office' => 'PresentPostOfficeArea',
+        'member_present_union' => 'PresentUnion',
+        'member_present_village' => 'PresentVillageWard',
+        'member_present_house' => 'PresentHouseStreet',
 
         // permanent 
-        'member_permanent_division' => 'permanent_division',
-        'member_permanent_district' => 'permanent_district',
-        'member_permanent_Upazila' => 'permanent_upazila',
-        'member_permanent_union' => 'permanent_union',
-        'member_permanent_village' => 'permanent_village',
-        'member_permanent_house' => 'permanent_house',
+        'member_permanent_division' => 'PermanentDivision',
+        'member_permanent_district' => 'PermanentDistrict',
+        'member_permanent_Upazila' => 'PermanentUpazila',
+        'member_permanent_post_office' => 'PermanentPostOfficeArea',
+        'member_permanent_union' => 'PermanentUnion',
+        'member_permanent_village' => 'PermanentVillageWard',
+        'member_permanent_house' => 'PermanentHouseStreet',
 
         // contact 
-        'member_family_contact' => 'family_contact',
-        'member_permanent_contact' => 'permanent_contact',
+        'member_family_contact' => 'PresentContactNo',
+        'member_permanent_contact' => 'PermanentContactNo',
     ],
 
     4 => [
-        'member_type' => 'member_type',
-        'member_profession' => 'profession',
-        'member_religion' => 'religion',
-        'member_sp_category' => 'special_category',
-        'member_family_member' => 'family_members',
-        'member_yearly_income' => 'yearly_income',
-        'member_land_area' => 'land_area',
-        'member_permanent_resident' => 'permanent_resident',
-        'member_fixed_asset' => 'fixed_asset',
-        'member_note' => 'note',
+        'member_type' => 'MemberType',
+        'member_profession' => 'Profession',
+        'member_religion' => 'Religion',
+        'member_sp_category' => 'Remarks',
+        'member_family_member' => 'NoOfFamilyMember',
+        'member_yearly_income' => 'YearlyIncome',
+        'member_land_area' => 'LandArea',
+        'member_permanent_resident' => 'IsMembersPermanentResidents',
+        'member_fixed_asset' => 'FixedAssetInfo',
+        'member_note' => 'Note',
     ],
 ];
 
@@ -119,18 +122,21 @@ $requiredField = [
         // nid 
         'member_NID_division',
         'member_NID_district',
+        'member_NID_post_office',
         'member_NID_village',
         'member_NID_house',
 
         // present  
         'member_present_division',
         'member_present_district',
+        'member_present_post_office',
         'member_present_village',
         'member_present_house',
 
         // permanent 
         'member_permanent_division',
         'member_permanent_district',
+        'member_permanent_post_office',
         'member_permanent_village',
         'member_permanent_house',
 
@@ -154,7 +160,7 @@ try {
         }
 
         // find member 
-        $member_query = $conn->prepare("SELECT current_step FROM members_list WHERE id = ?");
+        $member_query = $conn->prepare("SELECT AdmissionFormCurrentStep FROM members WHERE id = ?");
         $member_query->bind_param('i', $member_db_id);
         $member_query->execute();
         $member_query_result = $member_query->get_result();
@@ -164,12 +170,12 @@ try {
             throw new Exception("Member not found.");
         }
 
-        if ((int) $member['current_step'] < 5) {
+        if ((int) $member['AdmissionFormCurrentStep'] < 5) {
             throw new Exception("Please complete all steps first.");
         }
 
         // update the status  
-        $status_query = $conn->prepare("UPDATE members_list SET status='submitted' WHERE id = ?");
+        $status_query = $conn->prepare("UPDATE members SET AdmissionFormStatus = 'submitted' WHERE id = ?");
         $status_query->bind_param('i', $member_db_id);
         $status_query->execute();
 
@@ -190,7 +196,7 @@ try {
 
     // an existing draft must exist and must not be submitted yet
     if ($member_db_id) {
-        $checkStepStatusQuery = $conn->prepare("SELECT status FROM members_list WHERE id = ?");
+        $checkStepStatusQuery = $conn->prepare("SELECT AdmissionFormStatus FROM members WHERE id = ?");
         $checkStepStatusQuery->bind_param('i', $member_db_id);
         $checkStepStatusQuery->execute();
         $checkStepStatusQueryResult = $checkStepStatusQuery->get_result();
@@ -198,7 +204,7 @@ try {
         if (!$checkStepStatus) {
             throw new Exception("Member Not Found");
         }
-        if ($checkStepStatus['status'] === 'submitted') {
+        if ($checkStepStatus['AdmissionFormStatus'] === 'submitted') {
             throw new Exception("This admission is already submitted.");
         }
     } elseif ($stepNo !== 1) {
@@ -224,36 +230,36 @@ try {
 
         if ($stepNo === 1) {
             // valid : mobile number 
-            if (!preg_match('/^(?:\+?88)?01[3-9]\d{8}$/', $data['member_mobile'])) {
+            if (!preg_match('/^(?:\+?88)?01[3-9]\d{8}$/', $data['MobileNo'])) {
                 throw new Exception("Members mobile number is Invalid!");
             }
 
-            if ($data['smart_id'] === null && $data['nid'] === null) {
+            if ($data['SmartId'] === null && $data['NationalId'] === null) {
                 throw new Exception('Please provide the SMART ID or the NID.');
             }
 
             // valid : smart id
-            if ($data['smart_id'] !== null && !preg_match('/^\d{10}$/', $data['smart_id'])) {
+            if ($data['SmartId'] !== null && !preg_match('/^\d{10}$/', $data['SmartId'])) {
                 throw new Exception("Smart Id must be 10 digits.");
             }
 
             // valid : nid
-            if ($data['nid'] !== null && !preg_match('/^\d{17}$/', $data['nid'])) {
+            if ($data['NationalId'] !== null && !preg_match('/^\d{17}$/', $data['NationalId'])) {
                 throw new Exception("NID must be 17 digits.");
             }
 
             // spouse name only for married/widow 
-            if (!in_array($data['marital_status'], ['Married', 'Widow'], true)) {
-                $data['spouse_name'] = null;
-            } elseif ($data['spouse_name'] === null) {
+            if (!in_array($data['MaritalStatus'], ['Married', 'Widow'], true)) {
+                $data['SpouseName'] = null;
+            } elseif ($data['SpouseName'] === null) {
                 throw new Exception('Spouse name is required.');
             }
         }
 
         if ($stepNo === 1 && !$member_db_id) {
             // INSERT (happens only once per member)
-            $data['admission_date'] = date('Y-m-d');
-            $data['admission_fee'] = 10;
+            $data['Admission_date'] = date('Y-m-d');
+            $data['AdmissionFee'] = 10;
 
             $cols         = implode(',', array_keys($data));
             $placeholders = implode(',', array_fill(0, count($data), '?'));
@@ -261,12 +267,12 @@ try {
             $conn->begin_transaction();
             $trackTransaction = true;
 
-            $insert_step1_query = $conn->prepare("INSERT INTO members_list ($cols) VALUES ($placeholders)");
+            $insert_step1_query = $conn->prepare("INSERT INTO members ($cols) VALUES ($placeholders)");
             $insert_step1_query->execute(array_values($data));
             $member_db_id = (int) $conn->insert_id;
 
             $gen_org_mem_code = 'M' . str_pad((string) $member_db_id, 7, '0', STR_PAD_LEFT);
-            $updateOrigMemCodQuery = $conn->prepare("UPDATE members_list SET OriginalMemberCode = ? WHERE id = ?");
+            $updateOrigMemCodQuery = $conn->prepare("UPDATE members SET OriginalMemberId = ? WHERE id = ?");
             $updateOrigMemCodQuery->bind_param("si", $gen_org_mem_code, $member_db_id);
             $updateOrigMemCodQuery->execute();
 
@@ -277,7 +283,7 @@ try {
             $dbColsSet = implode('= ?,', array_keys($data)) . "= ?";
             $colValuesSet = array_values($data);
 
-            $update_step1_query = $conn->prepare("UPDATE members_list SET $dbColsSet WHERE id = '$member_db_id'");
+            $update_step1_query = $conn->prepare("UPDATE members SET $dbColsSet WHERE id = '$member_db_id'");
             $update_step1_query->execute($colValuesSet);
         }
     }
@@ -331,12 +337,12 @@ try {
         $encodedReferences = json_encode($references, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 
         // update nominee and reference the data column 
-        $update_nominee_query = $conn->prepare("UPDATE members_list SET nominees = ?, member_references = ? WHERE id = ?");
+        $update_nominee_query = $conn->prepare("UPDATE members SET MemberNominees = ?, MemberReferences = ? WHERE id = ?");
         $update_nominee_query->bind_param('ssi', $encodedNominees, $encodedReferences, $member_db_id);
         $update_nominee_query->execute();
     }
 
-    // STEP-5 (documents)
+    // STEP-5 (MemberDocuments)
     $savedDocs = null;
     if ($stepNo === 5) {
         $allowedExt = [
@@ -420,21 +426,21 @@ try {
 
         $encodedDocs = json_encode($docs, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 
-        $update_doc_query = $conn->prepare("UPDATE members_list SET documents = ? WHERE id = ?");
+        $update_doc_query = $conn->prepare("UPDATE members SET MemberDocuments = ? WHERE id = ?");
         $update_doc_query->bind_param('si', $encodedDocs, $member_db_id);
         $update_doc_query->execute();
         $savedDocs = $docs;
     }
 
 
-    $update_step_query = $conn->prepare("UPDATE members_list SET current_step = GREATEST(current_step,?) WHERE id = ?");
+    $update_step_query = $conn->prepare("UPDATE members SET AdmissionFormCurrentStep = GREATEST(AdmissionFormCurrentStep,?) WHERE id = ?");
     $update_step_query->bind_param('ii', $stepNo, $member_db_id);
     $update_step_query->execute();
 
     $respondedJson = ['success' => true, "original_member_id" => $member_db_id];
 
     if ($savedDocs !== null) {
-        $respondedJson['documents'] = $savedDocs;
+        $respondedJson['MemberDocuments'] = $savedDocs;
     }
 
     echo json_encode($respondedJson, JSON_UNESCAPED_UNICODE);

@@ -32,6 +32,11 @@ $upazilla_query = $conn->prepare("SELECT * FROM area_upazilla");
 $upazilla_query->execute();
 $upazilla = $upazilla_query->get_result()->fetch_all(MYSQLI_ASSOC);
 
+// QUERY:: FETCH POST OFFICE DATA
+$post_office_query = $conn->prepare("SELECT * FROM area_postoffice");
+$post_office_query->execute();
+$post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -582,6 +587,25 @@ $upazilla = $upazilla_query->get_result()->fetch_all(MYSQLI_ASSOC);
                             </select>
                         </div>
 
+                        <!-- FIELD:: member NID post Office-->
+                        <div class="field-group">
+                            <label for="MemberNIDPostOffice">
+                                Post Office
+                                <span class="req">*</span>
+                            </label>
+                            <select name="member_NID_post_office" id="MemberNIDPostOffice" required>
+                                <option value="">-- Select Post Office --</option>
+                                <?php
+                                foreach ($post_office as $post) { ?>
+                                    <option value="<?php echo htmlspecialchars($post['post_code']); ?>">
+                                        <?php echo htmlspecialchars($post['post_office_name']); ?>
+                                    </option>
+                                <?php }
+
+                                ?>
+                            </select>
+                        </div>
+
                         <!-- FIELD:: member NID union-->
                         <div class="field-group">
                             <label for="MemberNIDUnion">
@@ -714,6 +738,25 @@ $upazilla = $upazilla_query->get_result()->fetch_all(MYSQLI_ASSOC);
                             </select>
                         </div>
 
+                        <!-- FIELD:: member present Post Office-->
+                        <div class="field-group">
+                            <label for="MemberPresentPostOffice">
+                                Post Office
+                                <span class="req">*</span>
+                            </label>
+                            <select name="member_present_post_office" id="MemberPresentPostOffice" required>
+                                <option value="">-- Select Post Office --</option>
+                                <?php
+                                foreach ($post_office as $post) { ?>
+                                    <option value="<?php echo htmlspecialchars($post['post_code']); ?>">
+                                        <?php echo htmlspecialchars($post['post_office_name']); ?>
+                                    </option>
+                                <?php }
+
+                                ?>
+                            </select>
+                        </div>
+
                         <!-- FIELD:: member present union-->
                         <div class="field-group">
                             <label for="MemberPresentUnion">
@@ -838,6 +881,25 @@ $upazilla = $upazilla_query->get_result()->fetch_all(MYSQLI_ASSOC);
                                         echo '</optgroup>';
                                     }
                                 }
+                                ?>
+                            </select>
+                        </div>
+
+                        <!-- FIELD:: member Permanent Post Office-->
+                        <div class="field-group">
+                            <label for="MemberPermanentPostOffice">
+                                Post Office
+                                <span class="req">*</span>
+                            </label>
+                            <select name="member_permanent_post_office" id="MemberPermanentPostOffice" required>
+                                <option value="">-- Select Post Office --</option>
+                                <?php
+                                foreach ($post_office as $post) { ?>
+                                    <option value="<?php echo htmlspecialchars($post['post_code']); ?>">
+                                        <?php echo htmlspecialchars($post['post_office_name']); ?>
+                                    </option>
+                                <?php }
+
                                 ?>
                             </select>
                         </div>
@@ -1353,27 +1415,7 @@ $upazilla = $upazilla_query->get_result()->fetch_all(MYSQLI_ASSOC);
             </form>
         </div>
 
-
         <!-- admission action buttons  -->
-        <!-- <div class="admission-actions">
-            <button type="button" class="add-btn-act" id="PrevBtn">
-                <i class="fas fa-angle-left"></i>
-                Previous
-            </button>
-            <button type="button" class="add-btn-act" id="NextBtn">
-                Next
-                <i class="fas fa-angle-right"></i>
-            </button>
-            <button type="submit" class="add-btn-act" id="submitBtn">
-                <i class="far fa-save"></i>
-                Save & Submit
-            </button>
-            <button type="button" class="add-btn-act" id="cancelBtn">
-                <i class="fas fa-reply"></i>
-                Cancel & Back
-            </button>
-        </div> -->
-        <!-- Admission Action Buttons -->
         <div class="admission-actions">
 
             <button type="button" class="add-btn-act prev-btn" id="PrevBtn">
