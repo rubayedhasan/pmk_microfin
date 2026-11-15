@@ -1,0 +1,79 @@
+/* ===== Full screen "saving" overlay ===== */
+.admission-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(2px);
+}
+
+.admission-loader.show {
+  display: flex;
+}
+
+.admission-loader__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 26px 36px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18);
+}
+
+.admission-spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 4px solid #e3e8f2;
+  border-top-color: #2563eb;
+  animation: admission-spin 0.8s linear infinite;
+}
+
+.admission-loader__text {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+}
+
+/* ===== Small spinner inside the clicked button ===== */
+.add-btn-act .btn-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  vertical-align: -2px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: admission-spin 0.7s linear infinite;
+}
+
+/* hide the normal icon while the spinner is shown */
+.add-btn-act.is-loading svg {
+  display: none;
+}
+
+/* ===== Disabled buttons (Previous on step 1, Next on step 5, Submit on step 1-4) ===== */
+.add-btn-act:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes admission-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admission-spinner,
+  .add-btn-act .btn-spinner {
+    animation-duration: 2s;
+  }
+}

@@ -1,0 +1,354 @@
+body {
+  background: #f5f6f8;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* table style override (../table/css/table.css)  */
+.employee-table thead th,
+.employee-table tbody td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.employee-table tbody td {
+  border: 0.5px solid #00800014;
+}
+
+/* common styles  */
+.flex-section-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* textarea style for fixed asset and note  */
+.textarea-note {
+  border: 1px solid #dde3ef;
+  padding: 6px 10px;
+  margin-bottom: 0;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  background: #f8f9fc;
+  height: 72px;
+  outline: none;
+}
+
+/* fields hints  */
+.nameHints,
+#mobileHints,
+#sidHints,
+#nidHints,
+#mobileHintsPerCon,
+.nominee-mobile-hints {
+  color: #e11d48;
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: none;
+  text-align: left;
+}
+
+/* breadcrumb  */
+.page-breadcrumb {
+  color: #6b7a99;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  padding: 8px 24px;
+  background-color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* breadcrumb item  */
+.page-breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.page-breadcrumb-item a {
+  color: #131313;
+  text-decoration: none;
+  transition: all 0.35s ease-in-out;
+}
+
+.page-breadcrumb-item a:hover {
+  color: #128e69;
+}
+
+.go-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 0.5px solid rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  transition: all 0.35s ease-in-out;
+}
+
+.go-back:hover {
+  background-color: #f0faf6;
+  border-color: rgba(18, 142, 105, 0.3);
+  box-shadow: 0 4px 10px rgba(18, 142, 105, 0.18);
+}
+
+/* step nav  */
+.step-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 16px;
+
+  padding: 10px;
+  /* background-color: #f8f9fa; */
+  /* background-color: #ebf1f66e; */
+  background-color: rgba(18, 142, 105, 0.02);
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  overflow-x: auto;
+}
+
+.step-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+
+  color: #64748b;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.35s ease-in-out;
+}
+
+.step-badge {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  border-radius: 50%;
+  color: #128e69;
+  border: 0.5px solid transparent;
+  transition: all 0.35s ease-in-out;
+}
+
+/* active and hover styles  */
+.step-btn:hover,
+.step-btn.step-active {
+  font-weight: 600;
+}
+
+.step-btn:hover .step-badge,
+.step-btn.step-active .step-badge {
+  color: #ffffff;
+  border-color: #128e69;
+  background-color: #128e69;
+  box-shadow: 0 2px 6px rgba(18, 142, 105, 0.25);
+}
+
+/* parent container  */
+.member-admission-container {
+  padding: 0 24px;
+}
+
+/*admission action buttons  */
+.admission-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.add-btn-act {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 100px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.35s ease-in-out;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Previous - Gray */
+.prev-btn {
+  background: #64748b;
+}
+
+.prev-btn:hover {
+  background: #475569;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(100, 116, 139, 0.3);
+}
+
+/* Next Button, Save & Submit - Green */
+.next-btn,
+.submit-btn {
+  background: #16a34a;
+}
+
+.next-btn:hover,
+.submit-btn:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(22, 163, 74, 0.3);
+}
+
+/* Cancel & Back - Red */
+.cancel-btn {
+  background: #dc2626;
+}
+
+.cancel-btn:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* Active effect */
+.add-btn-act:active {
+  transform: scale(0.97);
+}
+
+/* disable style (button)  */
+.admission-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* spouse field hide  */
+#spouseParentField {
+  display: none;
+}
+
+/* add nominee/reference button  */
+#add-nominee,
+#add-reference {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 8px;
+  text-transform: capitalize;
+  background-color: #128e69;
+  border: 1px solid #128e69;
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* document main container  */
+.member-document-container {
+  position: relative;
+}
+
+#document-main-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.document-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 110px 0.1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 16px;
+  border-bottom: 1px solid #128e6936;
+  border-radius: 4px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.document-container .textarea-note {
+  height: 40px;
+}
+
+/* doc preview  */
+.member-doc-preview {
+  height: 110px;
+  width: 110px;
+  margin: 0;
+  border: 0.5px solid #0b1b1626;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 3px 10px rgba(18, 142, 105, 0.12);
+  transition: all 0.25s ease;
+}
+
+.member-doc-preview:hover {
+  box-shadow: 0 5px 14px rgba(18, 142, 105, 0.22);
+  transform: translateY(-2px);
+  border-color: #0d7456;
+}
+
+.member-doc-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.member-doc-preview:hover img {
+  transform: scale(1.04);
+}
+
+.doc-action {
+  text-align: right;
+}
+
+/* add doc button  */
+.add-doc-container {
+  position: absolute;
+  top: -88px;
+  right: -34px;
+}
+
+#add-doc-btn {
+  height: 40px;
+  width: 40px;
+  color: #fff;
+  background-color: #128e69;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  font-size: 0.825rem;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#add-doc-btn:hover {
+  box-shadow: 0 4px 10px rgba(18, 142, 105, 0.45);
+  transform: scale(1.08);
+}
