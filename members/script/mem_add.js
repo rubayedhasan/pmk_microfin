@@ -787,3 +787,15 @@ documentMainContainer.addEventListener("change", function (e) {
     img.src = URL.createObjectURL(file);
   }
 });
+
+// customized select2 functionality
+// document.addEventListener("DOMContentLoaded", () => {
+//   const selects = document.querySelectorAll(".custom-select-container select");
+
+//   selects.forEach((select) => {
+//     new Select2(select, {
+//       dropdownCssClass: "custom-dropdown-container",
+//       width: "100%",
+//     });
+//   });
+// });

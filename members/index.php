@@ -49,11 +49,16 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
     <link rel="stylesheet" href="../utility_library/fontawesome-5.15.4/css/all.css">
     <!-- Linked bootstrap stylesheet  -->
     <link rel="stylesheet" href="../utility_library/bootstrap-5.3.8/css/bootstrap.css">
+
+    <!-- Linked select2 stylesheet  -->
+    <!-- <link rel="stylesheet" href="../utility_library/select2-4.1.0/dist/css/select2.min.css"> -->
+
     <!-- Linked custom stylesheet  -->
     <link rel="stylesheet" href="../form/css/single_form.css">
     <link rel="stylesheet" href="../table/css/table.css">
-    <link rel="stylesheet" href="./styles/member_admission.css">
     <link rel="stylesheet" href="./styles/member_admission_spinner.css">
+    <link rel="stylesheet" href="../custom_styles/select2_custom_style.css">
+    <link rel="stylesheet" href="./styles/member_admission.css">
 </head>
 
 <body>
@@ -144,7 +149,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: samity name-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="memberSamity">
                                 Samity name
                                 <span class="req">*</span>
@@ -158,7 +163,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: primary product-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="primaryProduct">
                                 Primary Product
                                 <span class="req">*</span>
@@ -223,7 +228,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: nationality-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="memberNationality">
                                 Nationality
                                 <span class="req">*</span>
@@ -244,7 +249,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member Gender-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="memberGender">
                                 Gender
                                 <span class="req">*</span>
@@ -276,7 +281,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member marital status-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="memberMaritalStatus">
                                 marital Status
                                 <span class="req">*</span>
@@ -301,7 +306,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member education-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="memberEducation">
                                 Education
                                 <span class="req">*</span>
@@ -505,7 +510,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member NID division-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="MemberNIDDivision">
                                 Division
                                 <span class="req">*</span>
@@ -524,7 +529,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member NID District-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="MemberNIDDistrict">
                                 District
                                 <span class="req">*</span>
@@ -556,7 +561,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member NID Upazila-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="MemberNIDUpazila">
                                 Thana / Upazila
                                 <span class="req">*</span>
@@ -588,7 +593,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member NID post Office-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="MemberNIDPostOffice">
                                 Post Office
                                 <span class="req">*</span>
@@ -656,7 +661,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member present division-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="MemberPresentDivision">
                                 Division
                                 <span class="req">*</span>
@@ -675,7 +680,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member present District-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="MemberPresentDistrict">
                                 District
                                 <span class="req">*</span>
@@ -707,7 +712,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member present Upazila-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="MemberPresentUpazila">
                                 Thana / Upazila
                                 <span class="req">*</span>
@@ -739,7 +744,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member present Post Office-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="MemberPresentPostOffice">
                                 Post Office
                                 <span class="req">*</span>
@@ -803,7 +808,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member Permanent division-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="MemberPermanentDivision">
                                 Division
                                 <span class="req">*</span>
@@ -822,7 +827,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member Permanent District-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="MemberPermanentDistrict">
                                 District
                                 <span class="req">*</span>
@@ -854,7 +859,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member Permanent Upazila-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="MemberPermanentUpazila">
                                 Thana / Upazila
                                 <span class="req">*</span>
@@ -886,7 +891,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member Permanent Post Office-->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="MemberPermanentPostOffice">
                                 Post Office
                                 <span class="req">*</span>
@@ -1146,7 +1151,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member type  -->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="memberType">
                                 Member Type
                                 <span class="req">*</span>
@@ -1164,7 +1169,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member profession  -->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="memberProfession">
                                 Member Profession
                                 <span class="req">*</span>
@@ -1236,14 +1241,14 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member religion  -->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="memberReligion">
                                 religion
                                 <span class="req">*</span>
                             </label>
                             <select name="member_religion" id="memberReligion" required>
                                 <option value="">--Select Religion --</option>
-                                <option value="Islam">Islam</option>
+                                <option value="Islam" selected>Islam</option>
                                 <option value="Hinduism">Hinduism</option>
                                 <option value="Buddhism">Buddhism</option>
                                 <option value="Christianity">Christianity</option>
@@ -1252,7 +1257,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member Special Category -->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="memberSPCategory">Special Category</label>
                             <select name="member_sp_category" id="memberSPCategory">
                                 <option value="">-- Select Category --</option>
@@ -1285,7 +1290,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                         </div>
 
                         <!-- FIELD:: member permanent resident -->
-                        <div class="field-group">
+                        <div class="field-group ">
                             <label for="memberPermanentResident">
                                 permanent resident
                                 <span class="req">*</span>
@@ -1342,7 +1347,7 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                             <template id="document-row-template">
                                 <div class="document-container">
                                     <!--FIELD::  doc type  -->
-                                    <div class="field-group">
+                                    <div class="field-group ">
                                         <label for="memberDocType">Document Type
                                             <span class="req">*</span>
                                         </label>
@@ -1451,12 +1456,30 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
     </section>
 
 
+    <!-- LInked jQuery script  -->
+    <!-- <script src="../utility_library/JQuery-4.0/jQuery-4.0.js"></script> -->
+
     <!-- LInked fontawesome script  -->
     <script src="../utility_library/fontawesome-5.15.4/js/all.js"></script>
     <!-- Linked bootstrap script  -->
     <script src="../utility_library/bootstrap-5.3.8/js/bootstrap.js"></script>
+
+    <!-- Linked select2 script  -->
+    <!-- <script src="../utility_library/select2-4.1.0/dist/js/select2.min.js"></script> -->
+
     <!-- Linked custom script  -->
     <script src="./script/member_admission.js"></script>
+
+    <!-- select2 initializer  -->
+    <!-- <script>
+        $(document).ready(function() {
+            $('.custom-select-container select').select2({
+                // closeOnSelect: true,
+                dropdownCssClass: 'custom-dropdown-container',
+                width: '100%'
+            });
+        });
+    </script> -->
 </body>
 
 </html>

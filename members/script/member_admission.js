@@ -619,6 +619,110 @@ document
     MobileValidation(this, document.querySelector("#mobileHintsPerCon"));
   });
 
+// CASCADING SELECTION:: division to district
+function cascadingSelectionDistrict(divisionField, districtField) {
+  document
+    .getElementById(divisionField)
+    .addEventListener("change", async function () {
+      const division_id = this.value;
+      const f = new FormData();
+      f.append("divisionId", division_id);
+      const res = await fetch("./server/fetch_address_area.php", {
+        method: "POST",
+        body: f,
+      });
+      const data = await res.json();
+
+      document.getElementById(districtField).innerHTML = `
+    <option value=''>-- Select District --</option>
+    ${data
+      .map(
+        (d) => `
+      <option value="${d.district_code}">${d.disctrict_name}</option>
+      `,
+      )
+      .join("")}
+    `;
+    });
+}
+
+// call function::  division wise district
+cascadingSelectionDistrict("MemberNIDDivision", "MemberNIDDistrict");
+cascadingSelectionDistrict("MemberPresentDivision", "MemberPresentDistrict");
+cascadingSelectionDistrict(
+  "MemberPermanentDivision",
+  "MemberPermanentDistrict",
+);
+
+// CASCADING SELECTION:: district to upazila
+function cascadingSelectionUpazila(districtField, upazilaField) {
+  document
+    .getElementById(districtField)
+    .addEventListener("change", async function () {
+      const district_id = this.value;
+      const f = new FormData();
+      f.append("districtId", district_id);
+      const res = await fetch("./server/fetch_address_area.php", {
+        method: "POST",
+        body: f,
+      });
+      const data = await res.json();
+
+      document.getElementById(upazilaField).innerHTML = `
+    <option value="">--Select Upazila--</option>
+    ${data
+      .map(
+        (d) => `
+      <option value="${d.upazilla_code}">${d.upazilla_name}</option>
+      `,
+      )
+      .join("")}
+    `;
+    });
+}
+
+// call function district wise upazila
+cascadingSelectionUpazila("MemberNIDDistrict", "MemberNIDUpazila");
+cascadingSelectionUpazila("MemberPresentDistrict", "MemberPresentUpazila");
+cascadingSelectionUpazila("MemberPermanentDistrict", "MemberPermanentUpazila");
+
+// CASCADING SELECTION:: division wise post office
+function cascadingSelectionPostOffice(divisionField, postOffField) {
+  document
+    .getElementById(divisionField)
+    .addEventListener("change", async function () {
+      const division_id = this.value;
+      const f = new FormData();
+      f.append("postDivId", division_id);
+      const res = await fetch("./server/fetch_address_area.php", {
+        method: "POST",
+        body: f,
+      });
+      const data = await res.json();
+      document.getElementById(postOffField).innerHTML = `
+    <option value="">--Select Post Office--</option>
+    ${data
+      .map(
+        (d) => `
+      <option value="${d.post_code}">${d.post_office_name}</option>
+      `,
+      )
+      .join("")}
+    `;
+    });
+}
+
+// call function district wise post office
+cascadingSelectionPostOffice("MemberNIDDivision", "MemberNIDPostOffice");
+cascadingSelectionPostOffice(
+  "MemberPresentDivision",
+  "MemberPresentPostOffice",
+);
+cascadingSelectionPostOffice(
+  "MemberPermanentDivision",
+  "MemberPermanentPostOffice",
+);
+
 /**
  * ===========================================
  * STEP-3:: Nominee & Reference
@@ -733,3 +837,15 @@ documentMainContainer.addEventListener("change", function (e) {
     img.src = URL.createObjectURL(file);
   }
 });
+
+// customized select2 functionality
+// document.addEventListener("DOMContentLoaded", () => {
+//   const selects = document.querySelectorAll(".custom-select-container select");
+
+//   selects.forEach((select) => {
+//     new Select2(select, {
+//       dropdownCssClass: "custom-dropdown-container",
+//       width: "100%",
+//     });
+//   });
+// });

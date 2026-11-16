@@ -106,10 +106,10 @@ body {
   justify-content: space-evenly;
   gap: 16px;
 
-  padding: 10px;
-  /* background-color: #f8f9fa; */
+  padding: 10px 0 8px;
+  background-color: #f8f9fa;
   /* background-color: #ebf1f66e; */
-  background-color: rgba(18, 142, 105, 0.02);
+  /* background-color: rgba(18, 142, 105, 0.02); */
   border-radius: 8px;
   border: 1px solid #e5e7eb;
   overflow-x: auto;
@@ -117,13 +117,13 @@ body {
 
 .step-btn {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: 6px;
 
   color: #64748b;
-  font-size: 0.8125rem;
+  font-size: 0.8rem;
   font-weight: 500;
   white-space: nowrap;
   padding: 0;
@@ -133,15 +133,15 @@ body {
 }
 
 .step-badge {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   border-radius: 50%;
   color: #128e69;
-  border: 0.5px solid transparent;
+  border: 0.5px solid #128e69;
   transition: all 0.35s ease-in-out;
 }
 
