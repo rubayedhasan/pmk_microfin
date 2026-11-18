@@ -602,8 +602,8 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                                 <option value="">-- Select Post Office --</option>
                                 <?php
                                 foreach ($post_office as $post) { ?>
-                                    <option value="<?php echo htmlspecialchars($post['post_code']); ?>">
-                                        <?php echo htmlspecialchars($post['post_office_name']); ?>
+                                    <option value="<?php echo htmlspecialchars($post['custom_post_code']); ?>">
+                                        <?php echo htmlspecialchars($post['post_code']); ?>-<?php echo htmlspecialchars($post['post_office_name']); ?>
                                     </option>
                                 <?php }
 
@@ -753,8 +753,8 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                                 <option value="">-- Select Post Office --</option>
                                 <?php
                                 foreach ($post_office as $post) { ?>
-                                    <option value="<?php echo htmlspecialchars($post['post_code']); ?>">
-                                        <?php echo htmlspecialchars($post['post_office_name']); ?>
+                                    <option value="<?php echo htmlspecialchars($post['custom_post_code']); ?>">
+                                        <?php echo htmlspecialchars($post['post_code']); ?>-<?php echo htmlspecialchars($post['post_office_name']); ?>
                                     </option>
                                 <?php }
 
@@ -900,8 +900,8 @@ $post_office = $post_office_query->get_result()->fetch_all(MYSQLI_ASSOC);
                                 <option value="">-- Select Post Office --</option>
                                 <?php
                                 foreach ($post_office as $post) { ?>
-                                    <option value="<?php echo htmlspecialchars($post['post_code']); ?>">
-                                        <?php echo htmlspecialchars($post['post_office_name']); ?>
+                                    <option value="<?php echo htmlspecialchars($post['custom_post_code']); ?>">
+                                        <?php echo htmlspecialchars($post['post_code']); ?>-<?php echo htmlspecialchars($post['post_office_name']); ?>
                                     </option>
                                 <?php }
 

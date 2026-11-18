@@ -361,7 +361,8 @@ cancelBtn.addEventListener("click", function () {
 });
 
 //FUNCTION CALL:: initial step show
-showActiveStep(1);
+
+showActiveStep(2);
 
 /**
  * ===========================================
@@ -686,25 +687,26 @@ cascadingSelectionUpazila("MemberNIDDistrict", "MemberNIDUpazila");
 cascadingSelectionUpazila("MemberPresentDistrict", "MemberPresentUpazila");
 cascadingSelectionUpazila("MemberPermanentDistrict", "MemberPermanentUpazila");
 
-// CASCADING SELECTION:: division wise post office
-function cascadingSelectionPostOffice(divisionField, postOffField) {
+// CASCADING SELECTION:: upazila wise post office
+function cascadingSelectionPostOffice(upazilaField, postOffField) {
   document
-    .getElementById(divisionField)
+    .getElementById(upazilaField)
     .addEventListener("change", async function () {
-      const division_id = this.value;
+      const upazila_id = this.value;
       const f = new FormData();
-      f.append("postDivId", division_id);
+      f.append("upazilaId", upazila_id);
       const res = await fetch("./server/fetch_address_area.php", {
         method: "POST",
         body: f,
       });
       const data = await res.json();
+      console.log(data);
       document.getElementById(postOffField).innerHTML = `
     <option value="">--Select Post Office--</option>
     ${data
       .map(
         (d) => `
-      <option value="${d.post_code}">${d.post_office_name}</option>
+      <option value="${d.custom_post_code}">${d.post_code}-${d.post_office_name}</option>
       `,
       )
       .join("")}
@@ -712,14 +714,11 @@ function cascadingSelectionPostOffice(divisionField, postOffField) {
     });
 }
 
-// call function district wise post office
-cascadingSelectionPostOffice("MemberNIDDivision", "MemberNIDPostOffice");
+// call function upazila wise post office
+cascadingSelectionPostOffice("MemberNIDUpazila", "MemberNIDPostOffice");
+cascadingSelectionPostOffice("MemberPresentUpazila", "MemberPresentPostOffice");
 cascadingSelectionPostOffice(
-  "MemberPresentDivision",
-  "MemberPresentPostOffice",
-);
-cascadingSelectionPostOffice(
-  "MemberPermanentDivision",
+  "MemberPermanentUpazila",
   "MemberPermanentPostOffice",
 );
 

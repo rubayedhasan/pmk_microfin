@@ -24,61 +24,14 @@ if (!empty($_POST['divisionId'])) {
     $upazila = $upazila_query->get_result()->fetch_all(MYSQLI_ASSOC);
 
     echo json_encode($upazila, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-} elseif (!empty($_POST['postDivId'])) {
-    $post_div_id = $_POST['postDivId'];
-    $div_name = '';
+} elseif (!empty($_POST['upazilaId'])) {
+    $upazila_id = $_POST['upazilaId'];
 
-    // define division name 
-    switch ((int) $post_div_id) {
-        case 10:
-            $div_name = 'Barisal';
-            break;
-        case 20:
-            $div_name = 'Chittagong';
-            break;
-        case 30:
-            $div_name = 'Dhaka';
-            break;
-        case 40:
-            $div_name = 'Khulna';
-            break;
-        case 45:
-            $div_name = 'Mymensingh';
-            break;
-        case 50:
-            $div_name = 'Rajshahi';
-            break;
-        case 55:
-            $div_name = 'Rangpur';
-            break;
-        case 60:
-            $div_name = 'Sylhet';
-            break;
-        default:
-            $div_name = '';
-    }
+    $postOffice_query = $conn->prepare("SELECT * FROM area_postoffice WHERE p_upazila_code = ?");
+    $postOffice_query->bind_param('s', $upazila_id);
+    $postOffice_query->execute();
 
-    $post_range = [
-        'Dhaka' => [1000, 1999],
-        'Mymensingh' => [2000, 2499],
-        'Sylhet' => [3000, 3399],
-        'Chittagong' => [4000, 4999],
-        'Rangpur' => [5000, 5799],
-        'Rajshahi' => [5800, 6999],
-        'Khulna' => [7000, 7999],
-        'Barisal' => [8200, 8799]
-    ];
+    $postOffice = $postOffice_query->get_result()->fetch_all(MYSQLI_ASSOC);
 
-    if (isset($post_range[$div_name])) {
-        [$min, $max] = $post_range[$div_name];
-        $postOffice_query = $conn->prepare("SELECT * FROM area_postoffice WHERE CAST(post_code AS UNSIGNED) BETWEEN ? AND ?");
-        $postOffice_query->bind_param('ss', $min, $max);
-        $postOffice_query->execute();
-
-        $postOffice = $postOffice_query->get_result()->fetch_all(MYSQLI_ASSOC);
-
-        echo json_encode($postOffice, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    } else {
-        echo json_encode([], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    }
+    echo json_encode($postOffice, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
